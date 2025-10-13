@@ -1,0 +1,10 @@
+Practical Session:
+
+Create folder called "Example One"
+
+1- index.html
+2- create git repository
+3- Open Gitlab account sign up
+4- Push this website to your online repo
+5- then share your clone URL in the WhatsApp group
+6-

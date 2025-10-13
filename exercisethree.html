@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Wanderlust Travel Agency</title>
+  <style>
+    /* CSS Syntax & Comments */
+    /* Reset */
+    * {
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f0f4f8;
+      color: #2c3e50;
+    }
+
+    .container {
+      max-width: 900px;
+      margin: 10px auto;
+      padding: 10px;
+    }
+
+    header {
+      background-color: #3498db;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+
+    .logo {
+      font-size: 2rem;
+      font-weight: bold;
+    }
+
+    nav {
+      margin-top: 10px;
+    }
+
+    nav ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    nav li {
+      display: inline-block;
+      margin-right: 15px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border: 1px solid white;
+    }
+
+    nav a:hover {
+      background-color: #2980b9;
+    }
+
+    .hero {
+      background-color: #2c3e50;
+      color: white;
+      padding: 20px;
+      text-align: center;
+      margin-top: 20px;
+    }
+
+    .hero h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: #e74c3c;
+      color: white;
+      text-decoration: none;
+      border: 1px solid #c0392b;
+    }
+
+    .btn:hover {
+      background-color: #c0392b;
+    }
+
+    .destinations {
+      margin-top: 30px;
+      background-color: white;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .destinations h2 {
+      font-size: 1.5rem;
+      color: #2c3e50;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 5px;
+      margin-bottom: 15px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+
+    th {
+      background-color: #3498db;
+      color: white;
+      padding: 8px;
+      text-align: left;
+      border: 1px solid #ddd;
+    }
+
+    td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #e74c3c;
+    }
+
+    .star {
+      color: gold;
+    }
+
+    .gallery {
+      margin-top: 30px;
+    }
+
+    .gallery h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .gallery-row {
+      margin-bottom: 10px;
+    }
+
+    .gallery-item {
+      display: inline-block;
+      width: 200px;
+      margin-right: 10px;
+      vertical-align: top;
+      border: 1px solid #ddd;
+      background-color: white;
+      padding: 5px;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 150px;
+      object-fit: cover;
+    }
+
+    .gallery-caption {
+      font-size: 0.9rem;
+      text-align: center;
+      margin-top: 5px;
+    }
+
+    .video-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    .video-section h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .video-wrapper {
+      width: 100%;
+      max-width: 560px;
+      margin: 0 auto;
+      border: 1px solid #ddd;
+      background-color: black;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 315px;
+      border: none;
+    }
+
+    .booking-form {
+      margin-top: 30px;
+      background-color: white;
+      padding: 15px;
+      border: 1px solid #ddd;
+    }
+
+    .booking-form h2 {
+      font-size: 1.5rem;
+      margin-bottom: 15px;
+    }
+
+    .form-group {
+      margin-bottom: 15px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+
+    input, select, textarea {
+      width: 100%;
+      padding: 5px;
+      border: 1px solid #ddd;
+    }
+
+    button {
+      width: 100%;
+      padding: 8px;
+      background-color: #3498db;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #2980b9;
+    }
+
+    footer {
+      background-color: #2c3e50;
+      color: white;
+      padding: 15px;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+    .social-icons {
+      margin: 10px 0;
+    }
+
+    .social-icons a {
+      color: white;
+      font-size: 1.2rem;
+      margin: 0 10px;
+    }
+
+    .social-icons a:hover {
+      color: #3498db;
+    }
+
+    /* Max-width for responsiveness */
+    @media (max-width: 600px) {
+      .container {
+        padding: 5px;
+      }
+      .logo {
+        font-size: 1.5rem;
+      }
+      .hero h2 {
+        font-size: 1.5rem;
+      }
+      .gallery-item {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
+      .video-wrapper {
+        max-width: 100%;
+      }
+      .video-wrapper iframe {
+        height: 200px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo"> Wanderlust Travel</div>
+    <nav>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#destinations">Destinations</a></li>
+        <li><a href="#gallery">Gallery</a></li>
+        <li><a href="#video">Watch Video</a></li>
+        <li><a href="#book">Book Now</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="container">
+    <section class="hero">
+      <h2>Explore the World with Us</h2>
+      <p>Your dream vacation is just a click away. Let us handle the details while you enjoy the journey.</p>
+      <a href="#book" class="btn">Start Planning</a>
+    </section>
+
+    <section class="destinations">
+      <h2>Featured Destinations</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Destination</th>
+            <th>Duration</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Bali, Indonesia</td>
+            <td>7 Days</td>
+            <td class="price">$899</td>
+          </tr>
+          <tr>
+            <td>Paris, France</td>
+            <td>5 Days</td>
+            <td class="price">$1,200</td>
+          </tr>
+          <tr>
+            <td>Tokyo, Japan</td>
+            <td>10 Days</td>
+            <td class="price">$1,500</td>
+          </tr>
+          <tr>
+            <td>Reykjavik, Iceland</td>
+            <td>8 Days</td>
+            <td class="price">$1,350</td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+
+    <section class="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="gallery-row">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Bali Beach">
+          <div class="gallery-caption">Bali, Indonesia</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Eiffel Tower">
+          <div class="gallery-caption">Paris, France</div>
+        </div>
+      </div>
+      <div class="gallery-row">
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Tokyo Skyline">
+          <div class="gallery-caption">Tokyo, Japan</div>
+        </div>
+        <div class="gallery-item">
+          <img src="https://images.unsplash.com/photo-1503220317375-aaad61436b1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Northern Lights">
+          <div class="gallery-caption">Iceland</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="video-section">
+      <h2>Watch Our Travel Highlights</h2>
+      <div class="video-wrapper">
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/3SsK-cxlj_w?si=FK5aTXWMV2pYZlWW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+    </section>
+
+    <section class="booking-form">
+      <h2>Book Your Dream Trip</h2>
+      <form>
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" required placeholder="Enter your full name">
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" required placeholder="Enter your email">
+        </div>
+        <div class="form-group">
+          <label for="destination">Destination</label>
+          <select id="destination" required>
+            <option value="">-- Select Destination --</option>
+            <option value="bali">Bali, Indonesia</option>
+            <option value="paris">Paris, France</option>
+            <option value="tokyo">Tokyo, Japan</option>
+            <option value="reykjavik">Reykjavik, Iceland</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="dates">Travel Dates</label>
+          <input type="text" id="dates" required placeholder="MM/DD/YYYY - MM/DD/YYYY">
+        </div>
+        <div class="form-group">
+          <label for="message">Special Requests</label>
+          <textarea id="message" rows="4" placeholder="Any special requests or dietary needs?"></textarea>
+        </div>
+        <button type="submit">Submit Booking Request</button>
+      </form>
+    </section>
+  </div>
+
+  <footer>
+    <p>© 2025 Wanderlust Travel Agency. All rights reserved.</p>
+    <p>Contact: info@wanderlusttravel.com | Phone: +1 (555) 123-4567</p>
+  </footer>
+</body>
+</html>
